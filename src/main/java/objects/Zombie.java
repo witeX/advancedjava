@@ -1,8 +1,6 @@
 package objects;
 
-import javax.swing.*;
-
-public class Wolf implements Enemy, Active {
+public class Zombie implements Enemy, Passive {
     @Override
     public int getHealthPoint() {
         return 0;
@@ -25,16 +23,16 @@ public class Wolf implements Enemy, Active {
 
     @Override
     public String toString() {
-        return "Wolf{}";
+        return "Zombie{}";
     }
 
     @Override
-    public void lookForHero() {
-        System.out.println("Looking where is hero");
+    public void waitForHero() {
+        System.out.println("Waiting for hero");
     }
 
     @Override
     public void enemySaySomething() {
-        System.out.println("I'm wolf");
+        System.out.println("I'm zombie");
     }
 }

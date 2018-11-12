@@ -2,10 +2,11 @@ import java.io.Serializable;
 
 public class SerializablePerson implements Serializable {
 
-    static final long serialVersionUID = 42L;
+    static final long serialVersionUID = -876L;
 
     private String name;
     private String lastName;
+
     private int age;
 
     private transient boolean online;

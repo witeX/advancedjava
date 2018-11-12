@@ -1,8 +1,9 @@
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Car {
+public class Car implements Serializable {
     private int maxSpeed = 50;
     private Set<Wheel> wheels =
             new HashSet<>(
@@ -18,7 +19,7 @@ public class Car {
         return wheels;
     }
 
-    public class Wheel {
+    public class Wheel implements Serializable{
         private Wheel(){
 
         }
@@ -30,5 +31,20 @@ public class Car {
                 health = false;
             }
         }
+
+        @Override
+        public String toString() {
+            return "Wheel{" +
+                    "health=" + health +
+                    '}';
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "maxSpeed=" + maxSpeed +
+                ", wheels=" + wheels +
+                '}';
     }
 }

@@ -1,8 +1,10 @@
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Person {
+public class Person implements Serializable {
     private final String firstName;
     private final String lastName;
+    private transient int onlineTime;
 
     public Person(String firstName, String lastName) {
         this.firstName = firstName;
@@ -15,6 +17,14 @@ public class Person {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public int getOnlineTime() {
+        return onlineTime;
+    }
+
+    public void setOnlineTime(int onlineTime) {
+        this.onlineTime = onlineTime;
     }
 
     @Override
@@ -36,6 +46,7 @@ public class Person {
         return "Person{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", onlineTime=" + onlineTime +
                 '}';
     }
 }
